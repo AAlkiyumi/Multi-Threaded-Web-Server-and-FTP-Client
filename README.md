@@ -24,7 +24,7 @@ This repository contains an implementation of a multi-threaded web server and an
 ### Docker Setup for FTP Server
 
 1. **Install Docker:**
-   - Follow the [official Docker installation guide](https://docs.docker.com/get-docker/) for your operating system.
+- Follow the [official Docker installation guide](https://docs.docker.com/get-docker/) for your operating system.
 
 2. **Run the Docker container for the FTP server:**
    ```bash
@@ -35,25 +35,25 @@ This repository contains an implementation of a multi-threaded web server and an
    docker container ls
 
 4. **Log in to the container and change ownership of the FTP directory:**
-  - Replace <CONTAINER_ID> with the actual container ID from the previous step.
-     ```bash
-     docker exec -it <CONTAINER_ID> /bin/bash
-  - Inside the container, change the ownership of the FTP directory:
-    ```bash
-     chown ftp:ftp /srv
+- Replace <CONTAINER_ID> with the actual container ID from the previous step.
+   ```bash
+   docker exec -it <CONTAINER_ID> /bin/bash
+- Inside the container, change the ownership of the FTP directory:
+   ```bash
+   chown ftp:ftp /srv
 
 5. **Create a test file in the FTP directory:**
-  - Still inside the container, create a test file:
-    ```bash
-    echo "Hello World!" >> /srv/ftp_test.txt
+- Still inside the container, create a test file:
+   ```bash
+   echo "Hello World!" >> /srv/ftp_test.txt
 
 6. **Verify setup by accessing files through the web server:**
-  - In your web browser, navigate to the following URLs to test various content types:
-    - http://localhost:6789/index.html
-    - http://localhost:6789/index2.html
-    - http://localhost:6789/index.txt
-    - http://localhost:6789/index.png
-    - http://localhost:6789/index.jpg
-    - http://localhost:6789/index.jpeg
-    - http://localhost:6789/index.gif
-    - http://localhost:6789/ftp_test.txt (This will test the FTP client functionality)
+- In your web browser, navigate to the following URLs to test various content types:
+   - http://localhost:6789/index.html
+   - http://localhost:6789/index2.html
+   - http://localhost:6789/index.txt
+   - http://localhost:6789/index.png
+   - http://localhost:6789/index.jpg
+   - http://localhost:6789/index.jpeg
+   - http://localhost:6789/index.gif
+   - http://localhost:6789/ftp_test.txt (This will test the FTP client functionality)
